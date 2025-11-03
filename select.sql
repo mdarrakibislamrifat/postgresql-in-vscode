@@ -52,3 +52,19 @@ SELECT * FROM students WHERE country='Bangladesh' OR country='Nepal';
 
 
 select * from students where blood_group='O+';
+
+
+SELECT upper(first_name) from students;
+
+SELECT concat(first_name,'  ',last_name) from students;
+
+
+-- scalar function
+SELECT length(first_name) from students;
+
+
+-- aggregate function
+SELECT avg(age) from students;
+
+
+SELECT max(length(first_name)) from students;
