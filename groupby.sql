@@ -32,8 +32,12 @@ create table "user"(
 create table post(
     id SERIAL PRIMARY KEY,
     title TEXT NOT NULL,
-    user_id INTEGER REFERENCES "user"(id)
+    user_id INTEGER REFERENCES "user"(id) ON Delete CASCADE
 )
+
+-- on delete cascade
+-- on delete set null
+-- on delete set default default 2 - default value
 
 ALTER Table post 
 alter COLUMN user_id set NOT NULL;
