@@ -26,3 +26,12 @@ INSERT into employees VALUES
 (2,'jabe Smith',102)
 
 
+-- cross join
+SELECT * from employees
+CROSS JOIN departments;
+
+
+
+-- when we want to natural join two table then each table have a common column
+SELECT * FROM employees
+NATURAL JOIN departments;
