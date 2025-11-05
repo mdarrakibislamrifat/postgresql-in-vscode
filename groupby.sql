@@ -39,6 +39,7 @@ create table post(
 -- on delete set null
 -- on delete set default default 2 - default value
 
+
 ALTER Table post 
 alter COLUMN user_id set NOT NULL;
 
