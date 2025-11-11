@@ -190,3 +190,38 @@ SELECT extract(
 from employees
 GROUP BY
     hire_year
+
+create table orders (
+    order_id SERIAL PRIMARY KEY,
+    customer_id INT,
+    order_date DATE,
+    total_amount DECIMAL(10, 2)
+)
+
+INSERT INTO
+    orders (
+        customer_id,
+        order_date,
+        total_amount
+    )
+VALUES (1, '2025-01-05', 120.50),
+    (2, '2025-01-07', 89.99),
+    (3, '2025-01-10', 250.00),
+    (1, '2025-01-12', 45.75),
+    (4, '2025-01-14', 310.20),
+    (5, '2025-01-15', 150.00),
+    (2, '2025-01-18', 72.90),
+    (6, '2025-01-20', 199.49),
+    (3, '2025-01-22', 550.75),
+    (7, '2025-01-25', 60.00);
+
+SELECT * from orders;
+
+select customer_id, order_id from orders
+
+SELECT customer_id, count(customer_id)
+from orders
+GROUP BY
+    customer_id
+HAVING
+    count(order_id) > 2;
